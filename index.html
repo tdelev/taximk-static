@@ -1,1 +1,64 @@
-Hello TAXIMK
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+
+  <title>TAXIMK</title>
+
+  <link href="/d/style.css?rev=@@hash" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body ng-app="taximk" ng-cloak class="ng-cloak">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a data-toggle="offcanvas" class="menu-button visible-xs"><h3><i class="fa fa-fw fa-chevron-left"></i></h3></a>
+      <a class="navbar-brand" ui-sref="index">TAXIMK</a>
+    </div>
+  </div>
+</div>
+<!--/.navbar -->
+
+<div class="row-offcanvas row-offcanvas-left">
+  <div id="sidebar" class="sidebar-offcanvas">
+    <div class="" ng-controller="Places as places">
+      <!-- <h3>{{ 'taxi.places' | translate }}</h3> -->
+      <div id="place-search">
+        <input type="text" ng-model="search_place" placeholder="Пребарај место..."
+               class="form-control search"/>
+      </div>
+      <ul class="nav nav-pills nav-stacked">
+        <li ng-repeat="p in places.places | filter:search_place" class="place-item">
+          <a ui-sref="taxi({ placeId : p.id, slug : p.slug })" class="place">{{ p.name }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="main">
+    <div autoscroll="true" class="main-container">
+      <ui-view></ui-view>
+    </div>
+  </div>
+</div>
+<!--/row-offcanvas -->
+
+<script src="/d/lib.js?rev=@@hash" type="text/javascript"></script>
+<script src="/d/data.js?rev=@@hash" type="text/javascript"></script>
+<script src="/d/app.js?rev=@@hash" type="text/javascript"></script>
+<script src="/d/templates.js?rev=@@hash" type="text/javascript"></script>
+</body>
+
+</html>
