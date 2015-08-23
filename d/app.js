@@ -17,7 +17,7 @@
 })();
 (function () { 
  return angular.module('taximk.config', [])
-.constant('version', {"number":"1.0.0","rev":"c91a62f"});
+.constant('version', {"number":"1.0.0","rev":"64ceff4"});
 
 })();
 
