@@ -5,7 +5,6 @@
       $rootScope.$on('$stateChangeSuccess', function (event) {
         if (!$window.ga)
           return;
-        console.log('send');
         $window.ga('send', 'pageview', {page: $location.path()});
       });
     });
@@ -24,7 +23,7 @@
 })();
 (function () { 
  return angular.module('taximk.config', [])
-.constant('version', {"number":"1.0.0","rev":"64ceff4"});
+.constant('version', {"number":"1.0.0","rev":"737b613"});
 
 })();
 
