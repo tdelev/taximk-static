@@ -13,7 +13,7 @@
 
   <title>TAXIMK</title>
 
-  <link href="/d/style.css?rev=8b0bb128e04e4e794177ca5ce31438bd" rel="stylesheet">
+  <link href="/d/style.css?rev=db236b02dd7da44f78d52866e2ac869b" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -24,14 +24,14 @@
 
 <body ng-app="taximk" ng-cloak class="ng-cloak">
 
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top" ng-controller="Main as main">
   <div class="container-fluid">
     <div class="navbar-header">
       <a data-toggle="offcanvas" class="menu-button visible-xs">
         <i class="fa fa-fw fa-chevron-left expand-btn"></i>
       </a>
       <a class="navbar-brand" ui-sref="index">
-        <img src="/images/icon.png" alt="Icon"/>
+        <img src="/images/icon.png" alt="Icon" title="{{ main.version.number}} {{ main.version.rev }}"/>
       </a>
     </div>
   </div>
@@ -62,8 +62,8 @@
 <!--/row-offcanvas -->
 
 <script src="/d/lib.js?rev=a3510f062887e18a5ddfebb9361fe570" type="text/javascript"></script>
-<script src="/d/app.js?rev=c4b3f723c9b2c02d9c5ac5887f533d8f" type="text/javascript"></script>
-<script src="/d/templates.js?rev=9a3e5fd7414474a69eb9980137f11c13" type="text/javascript"></script>
+<script src="/d/app.js?rev=2275f41c788d742a0f44378a4d2eefe8" type="text/javascript"></script>
+<script src="/d/templates.js?rev=ef4682d2b1d13e92914596ad35fd95d3" type="text/javascript"></script>
 </body>
 
 </html>

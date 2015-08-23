@@ -8922,7 +8922,7 @@ body {
 }
 
 .taxi-item .panel-heading > h2 {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 10px;
     color: #eeeeee;
 }
@@ -8987,10 +8987,6 @@ a:hover {
 .search:focus {
     border-color: #FFE83C;
     box-shadow: inset 0 -2px 0 #FFE83C !important;
-}
-
-.search {
-    color: #ffffff;
 }
 
 .search-taxi {
