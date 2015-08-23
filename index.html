@@ -47,7 +47,7 @@
                class="form-control search"/>
       </div>
       <ul class="nav nav-pills nav-stacked">
-        <li ng-repeat="p in places.places | filter:search_place" class="place-item">
+        <li ng-repeat="p in places.places | orderBy: 'name' | filter:search_place" class="place-item">
           <a ui-sref="taxi({ placeId : p.id, slug : p.slug })" class="place">{{ p.name }}</a>
         </li>
       </ul>
@@ -62,8 +62,8 @@
 <!--/row-offcanvas -->
 
 <script src="/d/lib.js?rev=a3510f062887e18a5ddfebb9361fe570" type="text/javascript"></script>
-<script src="/d/app.js?rev=2275f41c788d742a0f44378a4d2eefe8" type="text/javascript"></script>
-<script src="/d/templates.js?rev=ef4682d2b1d13e92914596ad35fd95d3" type="text/javascript"></script>
+<script src="/d/app.js?rev=3aa7016bec0f1f3db2db16192b9e00ad" type="text/javascript"></script>
+<script src="/d/templates.js?rev=4c037f9138b5ca43ad96287ecea25c56" type="text/javascript"></script>
 </body>
 
 </html>
