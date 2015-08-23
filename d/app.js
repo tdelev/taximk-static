@@ -3,12 +3,14 @@
   angular.module('taximk', ['ui.router', 'taximk.config', 'taximk.data'])
     .run(function ($rootScope, $location, $window) {
       $rootScope.$on('$stateChangeSuccess', function (event) {
-        if (!$window.ga)
+        if (!$window.ga) {
           return;
+        }
         $window.ga('send', 'pageview', {page: $location.path()});
       });
     });
 })();
+
 (function () {
   'use strict';
   angular
@@ -19,8 +21,10 @@
     var vm = this;
     vm.taxi = taxi;
     vm.place = place;
+    vm.order = 'name';
   }
 })();
+
 (function () { 
  return angular.module('taximk.config', [])
 .constant('version', {"number":"1.0.0","rev":"737b613"});
@@ -36,12 +40,14 @@
 
 (function () {
   'use strict';
+  /* global document:false */
   $(document).ready(function () {
     $('[data-toggle=offcanvas]').click(function () {
       $('.row-offcanvas').toggleClass('active');
     });
   });
 })();
+
 (function () {
   'use strict';
   angular
@@ -53,6 +59,7 @@
     vm.version = version;
   }
 })();
+
 (function () {
   'use strict';
   angular
@@ -64,6 +71,7 @@
     vm.places = places.data;
   }
 })();
+
 (function () {
   'use strict';
   angular
@@ -96,7 +104,8 @@
         taxi: function ($stateParams, $filter, taxi) {
           if ($stateParams.placeId) {
             var filtered = $filter('filter')(taxi.data, function (value, index) {
-              return value.place.id == $stateParams.placeId;
+              var placeId = parseInt($stateParams.placeId, 10);
+              return value.place.id === placeId;
             });
             return filtered;
           } else {
@@ -106,7 +115,8 @@
         place: function ($stateParams, $filter, places) {
           if ($stateParams.placeId) {
             var filtered = $filter('filter')(places.data, function (value, index) {
-              return value.id == $stateParams.placeId;
+              var placeId = parseInt($stateParams.placeId, 10);
+              return value.id === placeId;
             });
             return filtered[0];
           } else {
