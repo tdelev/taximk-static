@@ -27,7 +27,7 @@
 
 (function () { 
  return angular.module('taximk.config', [])
-.constant('version', {"number":"1.0.0","rev":"4572843"});
+.constant('version', {"number":"1.0.0","rev":"320d241"});
 
 })();
 
